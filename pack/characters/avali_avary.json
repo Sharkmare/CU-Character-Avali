@@ -1,0 +1,37 @@
+{
+  "key": "avary",
+  "id": 3,
+  "base": "experiment",
+  "skin": "avary",
+  "unlock": "always",
+  "name": { "en": "Avary" },
+  "family": { "en": "A small feathered cold-world sapient, fast, clever and fragile." },
+  "quote": { "en": "Too warm in here." },
+  "quirks": { "en": "[COLDBLOOD] [FAST_METABOLISM] [LIGHT_FRAME] [SENSITIVE_EARS] [HEAT_INTOLERANT]" },
+  "skills": [5, 6, 11],
+  "multipliers": [0.8, 0.8, 1.25],
+  "numbers": {
+    "insulationMult": 1.6,
+    "heatThirstMult": 1.8,
+    "heatThreshold": 37.5,
+    "hungerRateMult": 1.3,
+    "thirstRateMult": 1.15,
+    "moveForceMult": 1.1,
+    "staminaGainMult": 1.15,
+    "carryMult": 0.75,
+    "painGainMult": 1.25,
+    "bleedGainMult": 1.2,
+    "hearingLossGainMult": 1.5
+  },
+  "flags": { "canSweat": false },
+  "stats": {
+    "molt": { "min": 0, "max": 100, "start": 0, "perSecond": 0.05, "label": { "en": "Molt" } }
+  },
+  "perks": [
+    { "id": "freshplumage", "name": { "en": "Fresh plumage" }, "desc": { "en": "Just molted: warmer for a while." }, "active": false, "duration": 600, "effects": { "insulationMult": 0.3 } }
+  ],
+  "behaviours": [
+    { "on": "wake", "when": [ { "path": "stat.molt", "op": ">=", "value": 100 } ], "do": [ { "set": "stat.molt", "value": 0 }, { "grant": "freshplumage" } ] },
+    { "on": "tick", "when": [ { "path": "body.temperature", "op": ">", "value": 38 } ], "do": [ { "add": "body.stamina", "value": -0.4, "perSecond": true } ] }
+  ]
+}
