@@ -25,7 +25,7 @@ Avary also has a molt stat that fills slowly; after a full molt and a night's sl
 
 - Casualties: Unknown with BepInEx 5.4.23.5
 - The character loader from https://github.com/Sharkmare/CasualtiesCharacters-loader, version 0.2.0 or newer
-- For multiplayer: a Together co-op build with extra character support, built from the source at https://github.com/Sharkmare/casualties-together (main branch, commit 23d8cd2 or later; the repository's version number reads 5.4.1, so go by the commit; its README has a Building section), with the loader and this pack on every player's game. No prebuilt download is offered.
+- For multiplayer: a Together co-op build with extra character support, built from the source at https://github.com/Sharkmare/casualties-together/tree/characters (the characters branch is the one with the extra character support; its README has a Building section), with the loader and this pack on every player's game. No prebuilt download is offered.
 - Singleplayer works with the loader alone. On any other Together build Avary is not available in multiplayer and everything else stays vanilla.
 
 ## Install
